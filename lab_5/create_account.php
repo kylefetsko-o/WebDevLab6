@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Passwords do not match.";
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "bookie_bookstore");
+    $conn = mysqli_connect("localhost", "bookie", "bookie123", "bookie_bookstore");
     if (!$conn) {
         die("Could not connect to the database.");
     }
@@ -113,7 +113,7 @@ function show($value) {
     <button>🔍</button>
   </span>
 
-  <button class="login">Login</button>
+  <a class="login" href="login.php">Login</a>
   <a href="#" class="cart">🛒 0</a>
 </div>
 
@@ -122,7 +122,7 @@ function show($value) {
 <h2>Account Created</h2>
 <p>Welcome, <?php echo show($first); ?>! Your account has been created successfully.</p>
 <div class="form-actions">
-  <a href="Welcome.html" class="shopbtn">Back to Home</a>
+  <a href="welcome.php" class="shopbtn">Back to Home</a>
 </div>
 
 <?php } else { ?>
@@ -176,7 +176,7 @@ function show($value) {
 
   <div class="form-actions">
     <button type="submit">Create Account</button>
-    <a href="Welcome.html" class="shopbtn">Back to Home</a>
+    <a href="welcome.php" class="shopbtn">Back to Home</a>
   </div>
 </form>
 
